@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<style>
+    h1 {
+        background-color: black;
+        color: white;
+    } 
+</style>
+    
+{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                
+                {% if user.is_authenticated %}
+                <h2 class="text-center">Details</h2>            
+                <h4 class="text-center"><em>Total: {{details|length}}</em></h4>
+                <table class="table table-bordered table-striped table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Contact Number</th>
+                            <th>Message</th>
+                            <th>Added On</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for x in details %}
+                            <tr>
+                                <td>{{x.id}}</td>
+                                <td>{{x.name}}</td>
+                                <td>{{x.email_id}}</td>
+                                <td>{{x.phone}}</td>
+                                <td>{{x.messager}}</td>
+                                <td>{{x.added_on}}</td>
+                            </tr>
+                        {% endfor%}
+                    </tbody>
+                </table>
+                {% endif %}
+                
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% if status %}
+<script>
+    alert("{{status}}");
+</script>
+{% endif %}

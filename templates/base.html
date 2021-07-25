@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- basic -->
+<meta charset="utf-8">
+{% load static %}
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- mobile metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<!-- site metas -->
+<title>Central Institute of Fire & Saftey Engineering</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- site icons shivam soni--------->
+<link rel="icon" href="{% static 'images/fevicon/IMG_20210218_211157.jpg' %}" type="image/gif" />
+<!-- bootstrap css -->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+<!-- Site css -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<!-- responsive css -->
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+<!-- colors css -->
+<link rel="stylesheet" href="{% static 'css/colors1.css' %}" />
+<!-- custom css -->
+<link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+<!-- wow Animation css -->
+<link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+<!-- revolution slider css -->
+<link rel="stylesheet" type="text/css" href="{% static 'revolution/css/settings.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'revolution/css/layers.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'revolution/css/navigation.css' %}" />
+{% block head %}
+
+{% endblock %}      
+</head>
+<body id="default_theme" class="it_service">
+    <!-- js section -->
+    <script src="{% static 'js/jquery.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- header -->
+    <header id="default_header" class="header_style_1">
+    <!-- header top -->
+    <div class="header_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2" style="width: 150px;height: 50px;">
+                    <!-- logo start -->
+                    <div class="logo"><img src="{% static 'images/logos/logo.png' %}" alt="logo" /></div>
+                    <!-- logo end -->
+                    </div>
+                <div class="col-md-8">
+                    <div class="full"><center>
+                        <h2 class="swapp">Central Institute Of Fire &amp; Safety Engineering</h2>
+                        <p class="swapp1 text-light" >India's No.1 Fire & Safety Engineering College</p>
+                        <p class="swapp2 text-light" >(भारत सरकार)</p>
+                        <p class="swapp3 text-light" >मानव संसाधन शिक्षण विकास परिषद</p></center>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end header top -->
+   
+    </header>
+    {% block content %}
+    
+    {% endblock %}
+    <footer class="footer_style_2">
+        <div class="container-fuild">
+        <div class="row">
+            <div class="footer_blog">
+            <div class="row">
+                <div class="col-md-4">
+                <div class="main-heading left_text">
+                    <h2>Kanpur Branch</h2>
+                </div>
+                <p>995-Damodar Nagar<br>
+                    Vaisno Devi Mandir,<br>
+                    Nr.Yadav P.C.O Chauraha,<br>
+                    Kanpur-208027(U.P.)</p><br>
+                    <p>Mo.+91 94514 42632,Mo.+91 73101 76777 <br>Email: info@cifseindia.org</p>
+                </div>
+                <div class="col-md-4">
+                <div class="main-heading left_text">
+                    <h2>Assam Branch</h2>
+                </div>
+                <p>Near AGCL Main Gate,<br>
+                    C&S Complex,<br>
+                    Jayanagar,Duliajan<br>
+                    P.O Dist,Duliajan,Assam-786602</p><br>
+                    <p>Mo.+91 87248 42158</p>
+                </div>
+                <div class="col-md-4">
+                <div class="main-heading left_text">
+                    <h2>Additional links</h2>
+                </div>
+                <ul class="footer-menu">
+                    <li><a href="/chat/about"><i class="fa fa-angle-right"></i>About us</a></li>
+                    <li><a href="/chat/contact_view"><i class="fa fa-angle-right"></i> Contact us</a></li>
+                    <div class="footer_mail-section">
+                    <form>
+                        <fieldset>
+                            <div class="field">
+                                <input placeholder="Email" type="text">
+                                <button class="button_custom"><i class="fa fa-envelope" aria-hidden="true"></i></button>
+                            </div>
+                        </fieldset>
+                    </form>
+                    </div>
+                </ul>
+                </div>
+            </div>
+            </div>
+            <div class="cprt">
+            <p>FIS © Copyrights 2021 Design by shivtech</p>
+            </div>
+        </div>
+        </div>
+    </footer>
+</body>
+</html>

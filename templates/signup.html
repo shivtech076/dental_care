@@ -1,0 +1,130 @@
+{% extends 'base_auth.html' %}
+{% block content %}
+<div class="container-fluid mt-3">
+    <div class="row">
+        <!-- <div class="col-md-6">
+
+        </div> -->
+        <!-- <div class="col-md-12"> -->
+            <!-- action="{% url 'home' %}" -->
+        <div class="col-md-12" style="margin-top: 51px;">
+            <h3 class="center">SignUp Here</h3>
+            <form  method="POST" class="px-5">
+                {% csrf_token %}
+                <div class="form-group">
+                    <div  class="row">
+                        <div class="col-md-6">
+                            <label for="">First Name</label>
+                            <input type="text" class="form-control" placeholder="First Name" name="first_name" >
+                        </div>
+                        <div class="col-md-6">
+                            <label for="">Last Name</label>
+                            <input type="text" class="form-control" placeholder="Last Name" name="last_name">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <small id="result"></small>
+
+                </div>
+                <div class="form-group">
+                    <label for="">User Name</label>
+                    <input type="text" class="form-control" placeholder="User Name" name="user_name" id="username" onkeyup="checkuser()">
+                </div>
+                <div class="form-group">
+                    <label for="">Phone</label>
+                    <input type="number" class="form-control" placeholder="Phone Number" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+                </div>
+                <div class="form-group">
+                    <small id="check_confirm_password"></small>
+                </div>
+                <div class="form-group">
+                    <label for="">Confirm Password <span id='message'></span></label>
+                    <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password" id="confirm_password" onkeyup="checkpassword()">
+                </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" class="form-control" placeholder="Email" name="email">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Sign Up" class="btn btn-success px-5" id="submit_btn">
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<script>
+    function checkuser(){
+        let un = document.getElementById("username").value;
+        //alert(un)
+        $.ajax({
+            url:"{% url 'check_user' %}",
+            type:"get",
+            data:{usern:un},
+            success:function(data){
+                //alert(data);
+                //$("#result").html(data);
+                if(data=="Exists"){
+                    $("#result").html("This username already taken").addClass("text-danger");
+                    $("#username").addClass("alert alert-danger");
+                    $("#submit_btn").attr("disabled","disabled");
+                }else{
+                    $("#result").html("");
+                    $("#username").removeClass("alert alert-danger");
+                    $("#submit_btn").removeAttr("disabled");
+                }
+            }
+        })
+    }
+    function checkpassword(){
+        let pswd = document.getElementById("password").value;
+        let c_pswd = document.getElementById("confirm_password").value;
+
+        $.ajax({
+            url:"{% url 'check_user' %}",
+            type:"get",
+            data:{pswd:pswd,
+                c_pswd:c_pswd},
+            success:function(data){
+                if(data!="confirmed"){
+                    $("#check_confirm_password").html("Password doesn't match").addClass("text-danger");
+                    $("#confirm_password").addClass("alert alert-danger");
+                    $("#submit_btn").attr("disabled","disabled");
+                    
+                }else if(data!="not confirmed"){
+                    $("#check_confirm_password").removeClass("text-danger");
+                    $("#check_confirm_password").html("Password Matched!").addClass("text-success");
+                    $("#confirm_password").removeClass("alert alert-danger");
+                    $("#submit_btn").removeAttr("disabled");
+                }
+                if(data=="remove message"){
+                    $("#check_confirm_password").html("");
+                    $("#confirm_password").removeClass("alert alert-danger");
+                    $("#submit_btn").attr("disabled","disabled");
+                }
+                if(data=="empty con_pswd"){
+                    $("#check_confirm_password").html("");
+                    $("#confirm_password").removeClass("alert alert-danger");
+                    $("#submit_btn").attr("disabled","disabled");
+                }
+            }    
+        })
+    }
+    /*$('.password, .confirm_password').on('keyup', function () {
+        if ($('#password').val() == $('#confirm_password').val()) {
+          $('#message').html('Matching').css('color', 'green');
+        } else 
+          $('#message').html('Not Matching').css('color', 'red');
+      });*/
+</script>
+{% if status %}
+    <script>
+        alert("{{status}}");
+    </script>
+{% endif %}
+{% endblock %}
