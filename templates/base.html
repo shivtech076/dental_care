@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 <!-- site metas -->
-<title>Central Institute of Fire & Saftey Engineering</title>
+<title>Divyarth Dental & Cosmetic Hospital</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -36,89 +36,150 @@
 {% endblock %}      
 </head>
 <body id="default_theme" class="it_service">
-    <!-- js section -->
-    <script src="{% static 'js/jquery.min.js'%}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <!-- header -->
-    <header id="default_header" class="header_style_1">
+<!-- js section -->
+<script src="{% static 'js/jquery.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- header -->
+<header id="default_header" class="header_style_1">
     <!-- header top -->
     <div class="header_top">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2" style="width: 150px;height: 50px;">
-                    <!-- logo start -->
-                    <div class="logo"><img src="{% static 'images/logos/logo.png' %}" alt="logo" /></div>
-                    <!-- logo end -->
-                    </div>
-                <div class="col-md-8">
-                    <div class="full"><center>
-                        <h2 class="swapp">Central Institute Of Fire &amp; Safety Engineering</h2>
-                        <p class="swapp1 text-light" >India's No.1 Fire & Safety Engineering College</p>
-                        <p class="swapp2 text-light" >(भारत सरकार)</p>
-                        <p class="swapp3 text-light" >मानव संसाधन शिक्षण विकास परिषद</p></center>
-                </div>
-                </div>
+    <div class="container">
+        <div class="row">
+        <div class="col-md-8">
+            <div class="full">
+            <div class="topbar-left">
+              <ul class="list-inline">
+                <li> <span class="topbar-label"><i class="fa  fa-home"></i></span> <span class="topbar-hightlight">Address Amreli</span> </li>
+                <li> <span class="topbar-label"><i class="fa fa-envelope-o"></i></span> <span class="topbar-hightlight"><a href="mailto:info@yourdomain.com">bhagi email</a></span> </li>
+              </ul>
             </div>
+          </div>
+        </div>
+        <div class="col-md-4 right_section_header_top">
+          <div class="float-left">
+            <div class="social_icon">
+              <ul class="list-inline">
+                <li><a class="fa fa-facebook" href="https://www.facebook.com/" title="Facebook" target="_blank"></a></li>
+                <li><a class="fa fa-google-plus" href="https://plus.google.com/" title="Google+" target="_blank"></a></li>
+                <li><a class="fa fa-twitter" href="https://twitter.com" title="Twitter" target="_blank"></a></li>
+                <li><a class="fa fa-linkedin" href="https://www.linkedin.com" title="LinkedIn" target="_blank"></a></li>
+                <li><a class="fa fa-instagram" href="https://www.instagram.com" title="Instagram" target="_blank"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end header top -->
+  <!-- header bottom -->
+  <div class="header_bottom">
+    <div class="container">
+      <div class="row">
+        <!-- <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12"> -->
+          <!-- logo start -->
+          <!-- <div class="logo"> <a href="it_home.html"><img src="images/logos/it_logo.png" alt="logo" /></a> </div> -->
+          <!-- logo end -->
+        <!-- </div> -->
+        <div class="col-lg-12 col-md-10 col-sm-12 col-xs-12">
+          <!-- menu start -->
+          <div class="menu_side">
+            <div id="navbar_menu">
+              <ul class="first-ul">
+                <li> <a class="active" href="{% url 'index' %}">Home</a></li>
+                <li><a href="#">About US</a>
+                   <ul>
+                    <li><a href="{% url 'doctor' %}">About The Doctor</a></li>
+                    <li><a href="{% url 'clinic' %}">About The Clinic</a></li>
+                  </ul>
+                </li>
+                <li> <a href="#">Dental Service</a>
+                  <ul>
+                    <li><a href="{% url 'replace' %}">Replacing Missing Teeth</a></li>
+                    <li><a href="{% url 'canal' %}">Root Canal Treatment</a></li>
+                    <li><a href="{% url 'wisdom' %}">Wisdom Teeth</a></li>
+                    <li><a href="{% url 'implants' %}">Dental Implants</a></li>
+                    <li><a href="{% url 'crooked' %}">Correction Of Crooked Teeth</a></li>
+                    <li><a href="{% url 'cavities' %}">Fixed Broken Teeth & Cavities</a></li>
+                  </ul>
+                </li>
+                <li> <a href="#">Common Dental Problem</a>
+                  <ul>
+                    <li><a href="{% url 'toothache' %}">Toothache</a></li>
+                    <li><a href="{% url 'bad_breath' %}">Bad Breath</a></li>
+                    <li><a href="{% url 'sensitivity' %}">Sensitivity</a></li>
+                    <li><a href="{% url 'broken_teeth' %}">Broken Teeth</a></li>
+                    <li><a href="{% url 'loose_teeth' %}">Loose Teeth</a></li>
+                    <li><a href="{% url 'short_teeth' %}">Short Teeth</a></li>
+                    <li><a href="{% url 'bleeding_gums' %}">Bleeding Gums</a></li>
+                    <li><a href="{% url 'crooked_teeth' %}">Crooked Teeth</a></li>
+                  </ul>
+                </li>
+                <li> <a href="#">Cosmetic Dentistry</a>
+                  <!-- <ul>
+                    <li><a href="it_career.html">Career</a></li>
+                    <li><a href="it_price.html">Pricing</a></li>
+                    <li><a href="it_faq.html">Faq</a></li>
+                    <li><a href="it_privacy_policy.html">Privacy Policy</a></li>
+                    <li><a href="it_error.html">Error 404</a></li>
+                  </ul> -->
+                </li>
+                <li> <a href="#">Contact</a>
+                 <!--  <ul>
+                    <li><a href="it_contact.html">Contact Page 1</a></li>
+                  </ul> -->
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- menu end -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- header bottom end -->
+</header>
+<!-- end header -->
+{% block content %}
+
+{% endblock %}
+<footer class="footer_style_2">
+    <div class="container-fuild">
+    <div class="row">
+        <div class="footer_blog">
+        <div class="row">
+            <div class="col-md-6">
+            <div class="main-heading left_text">
+                <h2>Amreli Branch</h2>
+            </div>
+            <p>Amreli nu full <br/>Address <br/> seri naka sahit</p>
+            </div>
+            <div class="col-md-6">
+            <div class="main-heading left_text">
+                <h2>Additional links</h2>
+            </div>
+            <ul class="footer-menu">
+                <li><a href="{% url 'doctor' %}"><i class="fa fa-angle-right"></i>About us</a></li>
+                <li><a href="/chat/contact_view"><i class="fa fa-angle-right"></i> Contact us</a></li>
+                <div class="footer_mail-section">
+                <form>
+                    <fieldset>
+                        <div class="field">
+                            <input placeholder="Email" type="text">
+                            <button class="button_custom"><i class="fa fa-envelope" aria-hidden="true"></i></button>
+                        </div>
+                    </fieldset>
+                </form>
+                </div>
+            </ul>
+            </div>
+        </div>
+        </div>
+        <div class="cprt">
+        <p>Divyrath © Copyrights 2021 Design by shivtech</p>
         </div>
     </div>
-
-    <!-- end header top -->
-   
-    </header>
-    {% block content %}
-    
-    {% endblock %}
-    <footer class="footer_style_2">
-        <div class="container-fuild">
-        <div class="row">
-            <div class="footer_blog">
-            <div class="row">
-                <div class="col-md-4">
-                <div class="main-heading left_text">
-                    <h2>Kanpur Branch</h2>
-                </div>
-                <p>995-Damodar Nagar<br>
-                    Vaisno Devi Mandir,<br>
-                    Nr.Yadav P.C.O Chauraha,<br>
-                    Kanpur-208027(U.P.)</p><br>
-                    <p>Mo.+91 94514 42632,Mo.+91 73101 76777 <br>Email: info@cifseindia.org</p>
-                </div>
-                <div class="col-md-4">
-                <div class="main-heading left_text">
-                    <h2>Assam Branch</h2>
-                </div>
-                <p>Near AGCL Main Gate,<br>
-                    C&S Complex,<br>
-                    Jayanagar,Duliajan<br>
-                    P.O Dist,Duliajan,Assam-786602</p><br>
-                    <p>Mo.+91 87248 42158</p>
-                </div>
-                <div class="col-md-4">
-                <div class="main-heading left_text">
-                    <h2>Additional links</h2>
-                </div>
-                <ul class="footer-menu">
-                    <li><a href="/chat/about"><i class="fa fa-angle-right"></i>About us</a></li>
-                    <li><a href="/chat/contact_view"><i class="fa fa-angle-right"></i> Contact us</a></li>
-                    <div class="footer_mail-section">
-                    <form>
-                        <fieldset>
-                            <div class="field">
-                                <input placeholder="Email" type="text">
-                                <button class="button_custom"><i class="fa fa-envelope" aria-hidden="true"></i></button>
-                            </div>
-                        </fieldset>
-                    </form>
-                    </div>
-                </ul>
-                </div>
-            </div>
-            </div>
-            <div class="cprt">
-            <p>FIS © Copyrights 2021 Design by shivtech</p>
-            </div>
-        </div>
-        </div>
-    </footer>
+    </div>
+</footer>
 </body>
 </html>
