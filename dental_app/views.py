@@ -56,3 +56,11 @@ def about_doctor_html(request):
 
 def about_clinic_html(request):
     return render(request,'about_the_clinic.html')
+
+def contact_html(request):
+    return render(request,'it_contact.html')
+
+def orthodontia_html(request):
+    return render(request,'orthodontia.html')
+
+

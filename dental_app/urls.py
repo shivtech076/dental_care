@@ -21,6 +21,11 @@ urlpatterns = [
     path('crooked_teeth_html/',crooked_teeth_html,name="crooked_teeth"),
     path('about_doctor_html/',about_doctor_html,name="doctor"),
     path('about_clinic_html/',about_clinic_html,name="clinic"),
+    path('contact_html/',contact_html,name="contact"),
+    path('orthodontia_html/',orthodontia_html,name="orthodontia"),
+    
     ]
+
+
 
     
